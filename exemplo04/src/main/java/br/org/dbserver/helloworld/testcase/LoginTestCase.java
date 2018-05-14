@@ -1,7 +1,5 @@
 package br.org.dbserver.helloworld.testcase;
 
-import static org.junit.Assert.assertTrue;
-
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -10,12 +8,13 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
+import br.org.dbserver.helloworld.verificationpoints.LoginVerificationPoints;
 import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class LoginTestCase {
 	
 	private WebDriver driver;
-	
+	private LoginVerificationPoints verificationpoints;
 	
 	
 	@Before
@@ -23,10 +22,8 @@ public class LoginTestCase {
 		WebDriverManager.firefoxdriver().setup();
 		
 		this.driver = new FirefoxDriver();
-		
 		this.driver.get("https://demo.virtuemart.net/");
-		
-		
+		this.verificationpoints = new LoginVerificationPoints(driver);
 		
 	}
 	
@@ -42,18 +39,12 @@ public class LoginTestCase {
 		
 		
 		submitButton.click();
-		/*
-		if(this.driver.getPageSource().contains("")) {
-			System.out.println("Entrou");
-			
-		}	
 		
-		else {
-			System.out.println("Não encontrou");
-		}
-		*/
-		assertTrue(this.driver.getPageSource().contains("Hi demo"));
+		verificationpoints.checkHelloUserMessage();
 	}
+
+
+	
 	
 	@After
 	public void tearDown() {
