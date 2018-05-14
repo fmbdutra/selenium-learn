@@ -1,7 +1,5 @@
 package br.org.dbserver.helloworld.verificationpoints;
 
-import static org.junit.Assert.assertTrue;
-
 import org.openqa.selenium.WebDriver;
 
 public class LoginVerificationPoints {
