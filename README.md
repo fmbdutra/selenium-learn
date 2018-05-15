@@ -1,7 +1,7 @@
-# selenium-learn
+# Selenium-learn
 Aprendendo Selenium 
 
-Student to Business (S2B) 2018/1
+Students to Business (S2B) 2018/1
 
 Aula com técnicos da DBServer
 
