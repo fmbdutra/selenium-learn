@@ -1,7 +1,8 @@
-# selenium-learn
+# Selenium-learn
 Aprendendo Selenium 
 
-Studant to Business (S2B) 2018/1 A
+Students to Business (S2B) 2018/1
+
 Aula com técnicos da DBServer
 
 Thomas, Rafael e Elidiane
