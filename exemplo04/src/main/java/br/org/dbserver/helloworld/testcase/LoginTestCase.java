@@ -12,48 +12,45 @@ import br.org.dbserver.helloworld.verificationpoints.LoginVerificationPoints;
 import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class LoginTestCase {
-	
+
 	private WebDriver driver;
 	private LoginVerificationPoints verificationpoints;
-	
-	
+
 	@Before
 	public void setUp() {
 		WebDriverManager.firefoxdriver().setup();
-		
+
 		this.driver = new FirefoxDriver();
 		this.driver.get("https://demo.virtuemart.net/");
 		this.verificationpoints = new LoginVerificationPoints(driver);
-		
+
 	}
-	
-	
+
 	@Test
-	public void testMain() {			
+	public void testMain() {
+
+		String user = "demo";
+		String passw = "demo";
+
 		WebElement usernameTextField = this.driver.findElement(By.id("modlgn-username"));
 		WebElement passwordTextField = this.driver.findElement(By.id("modlgn-passwd"));
 		WebElement submitButton = this.driver.findElement(By.name("Submit"));
-		
-		usernameTextField.sendKeys("demo");
-		passwordTextField.sendKeys("demo");
-		
-		
+
+		usernameTextField.sendKeys(user);
+		passwordTextField.sendKeys(passw);
+
 		submitButton.click();
-		
+
 		verificationpoints.checkHelloUserMessage();
 	}
 
-
-	
-	
 	@After
 	public void tearDown() {
 		this.driver.quit();
-		
-		/*
-		 * Quit - fecha o webdriver
-		 * Close - fecha o navegador
-		 */
+
+		// Quit - fecha o webdriver
+		// Close - fecha o navegador
+
 	}
 
 }

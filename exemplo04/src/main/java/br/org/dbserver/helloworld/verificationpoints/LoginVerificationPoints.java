@@ -10,17 +10,17 @@ public class LoginVerificationPoints {
 	}
 	
 	public void checkHelloUserMessage() {
-				
-		if(this.driver.getPageSource().contains("")) {
 		
-			System.out.println("Entrou");
-			
+		String expectedMessage = "Hi demo";
+				
+		if(this.driver.getPageSource().contains(expectedMessage)) {
+		
+			System.out.println("Entrou na página");			
 		}	
 		
 		else {
 			System.out.println("Não encontrou");
 		}
 		
-		//assertTrue(this.driver.getPageSource().contains("Hi demo"));
 	}	
 }

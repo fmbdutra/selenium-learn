@@ -9,19 +9,17 @@ import org.junit.runners.Suite.SuiteClasses;
 import br.org.dbserver.helloworld.testcase.LoginTestCase;
 
 @RunWith(Suite.class)
-@SuiteClasses({
-	LoginTestCase.class
-})
+@SuiteClasses({ LoginTestCase.class })
 public class RegressionTestSuite {
 	@BeforeClass
 	public static void init() {
 		System.out.println("Iniciando execução...");
-		
+
 	}
-	
+
 	@AfterClass
 	public static void end() {
-		System.out.println("Finalizando.");
+		System.out.println("Finalizado.");
 	}
-	
+
 }
